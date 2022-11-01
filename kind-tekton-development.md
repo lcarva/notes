@@ -38,6 +38,9 @@ data:
 
 ## Namespace Setup
 
+This section helps setup a new namespace which contains the same registry authentication
+found on your local system.
+
 Create a new namespace.
 
 ```
