@@ -36,6 +36,11 @@ data:
   artifacts.taskrun.storage: oci
 ```
 
+Generate Signing Secret
+```
+cosign generate-key-pair k8s://tekton-chains/signing-secrets
+```
+
 ## Namespace Setup
 
 This section helps setup a new namespace which contains the same registry authentication
