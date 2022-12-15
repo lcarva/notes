@@ -16,6 +16,12 @@ Install Tekton
 kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
 ```
 
+Enable Useful Tekton Features
+```
+kubectl -n tekton-pipelines patch cm feature-flags \
+    -p '{"data":{"enable-tekton-oci-bundles":"true"}}'
+```
+
 Install Chains
 
 ```
@@ -25,15 +31,13 @@ kubectl apply --filename https://storage.googleapis.com/tekton-releases/chains/l
 Configure Chains
 
 ```
-kubectl -n tekton-chains edit cm chains-config
-
-# Add the following:
-data:
-  artifacts.oci.storage: oci
-  artifacts.pipelinerun.format: in-toto
-  artifacts.pipelinerun.storage: oci
-  artifacts.taskrun.format: in-toto
-  artifacts.taskrun.storage: oci
+kubectl -n tekton-chains patch cm chains-config -p '{"data": {
+  "artifacts.oci.storage": "oci",
+  "artifacts.pipelinerun.format": "in-toto",
+  "artifacts.pipelinerun.storage": "oci",
+  "artifacts.taskrun.format": "in-toto",
+  "artifacts.taskrun.storage": "oci"
+}}'
 ```
 
 Generate Signing Secret
