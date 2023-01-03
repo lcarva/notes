@@ -7,7 +7,7 @@ Notes on how to use Kind to develop on Tekton Chains.
 Start a new kind cluster. Skip if you already have one.
 
 ```
-kind create cluster --image kindest/node:v1.24.6
+kind create cluster
 ```
 
 Install Tekton
