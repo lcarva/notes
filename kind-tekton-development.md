@@ -19,7 +19,7 @@ kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline
 Enable Useful Tekton Features
 ```
 kubectl -n tekton-pipelines patch cm feature-flags \
-    -p '{"data":{"enable-tekton-oci-bundles":"true"}}'
+    -p '{"data":{"enable-tekton-oci-bundles":"true","enable-api-fields":"beta"}}'
 ```
 
 Install Chains
