@@ -5,7 +5,7 @@
 Use clusterbot to create a new cluster:
 
 ```text
-workflow-launch hypershift-hostedcluster-workflow 4.12.21 HYPERSHIFT_NODE_COUNT=3
+workflow-launch hypershift-hostedcluster-workflow 4.12 HYPERSHIFT_NODE_COUNT=3
 ```
 
 Install RHTAP on the cluster:
