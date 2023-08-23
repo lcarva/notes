@@ -29,6 +29,8 @@ Copy local creds to the cluster so images can be pushed to repos
 in the quay.io org above:
 
 ```bash
+kubectl create namespace e2e-secrets
+
 kubectl -n e2e-secrets create secret docker-registry quay-repository \
     --from-file=.dockerconfigjson=$HOME/.docker/config.json
 ```
